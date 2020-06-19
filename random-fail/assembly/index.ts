@@ -19,11 +19,11 @@ import {
 
 class RandomFailRoot extends RootContext {
     createContext(context_id: u32): Context {
-        return ContextHelper.wrap(new RandomHeader(context_id, this));
+        return ContextHelper.wrap(new RandomFailFilter(context_id, this));
     }
 }
 
-class RandomHeader extends Context {
+class RandomFailFilter extends Context {
     context: RandomFailRoot;
     rng: RNG;
 
